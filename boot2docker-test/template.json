@@ -1,0 +1,74 @@
+{
+    "template": {
+        "name": "boot2docker-test", 
+        "author": "Jakub Klama <jakub@ixsystems.com>", 
+        "description": "boot2docker Docker host for FreeNAS", 
+        "created_at": {
+            "$date": "2016-02-10T22:45:38"
+        }, 
+        "updated_at": {
+            "$date": "2017-04-06T12:06:55"
+        }, 
+        "files": true, 
+        "fetch": [
+            {
+                "name": "vmlinuz64", 
+                "url": "https://transfer.sh/cVjJf/vmlinuz64.gz", 
+                "sha256": "0cfd30f313b3d25d50d50c71667bf4e5099ca5ccd92d1ed5153347f33cc236dc",
+                "size": 3635574,
+                "dest": "grub"
+            }, 
+            {
+                "name": "initrd", 
+                "url": "https://transfer.sh/ARkKf/initrd.img.gz", 
+                "sha256": "9cfe7b794a26c482ea7012015fed1c51a22a7b7feb98169a66648a0402711d4e",
+                "size": 35138020,
+                "dest": "grub"
+            }
+        ]
+    }, 
+    "config": {
+        "docker_host": true, 
+        "ncpus": 1, 
+        "bootloader": "GRUB", 
+        "memsize": 2048,
+        "minmemsize": 1024,
+        "boot_directory": "grub", 
+        "autostart": true
+    }, 
+    "devices": [
+        {
+            "type": "NIC", 
+            "name": "mgmt", 
+            "properties": {
+                "mode": "MANAGEMENT"
+            }
+        }, 
+        {
+            "type": "NIC", 
+            "name": "bridge", 
+            "properties": {
+                "mode": "BRIDGED",
+                "bridge": "default"
+            }
+        }, 
+        {
+            "type": "VOLUME", 
+            "name": "docker", 
+            "properties": {
+                "type": "VT9P", 
+                "auto": true
+            }
+        }, 
+        {
+            "type": "VOLUME", 
+            "name": "mnt", 
+            "properties": {
+                "type": "VT9P", 
+                "destination": "/mnt", 
+                "auto": false
+            }
+        }
+    ], 
+    "guest_type": "linux64"
+}
