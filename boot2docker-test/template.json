@@ -7,22 +7,22 @@
             "$date": "2016-02-10T22:45:38"
         }, 
         "updated_at": {
-            "$date": "2017-04-06T12:06:55"
+            "$date": "2017-04-10T12:06:55"
         }, 
         "files": true, 
         "fetch": [
             {
                 "name": "vmlinuz64", 
-                "url": "https://transfer.sh/cVjJf/vmlinuz64.gz", 
-                "sha256": "0cfd30f313b3d25d50d50c71667bf4e5099ca5ccd92d1ed5153347f33cc236dc",
-                "size": 3635574,
+                "url": "https://transfer.sh/CpWk5/vmlinuz64.gz", 
+                "sha256": "20f209917d268fb94cb6c3bbc83c944a32f9043ac4e8ef914badb45706699722",
+                "size": 3635410,
                 "dest": "grub"
             }, 
             {
                 "name": "initrd", 
-                "url": "https://transfer.sh/ARkKf/initrd.img.gz", 
-                "sha256": "9cfe7b794a26c482ea7012015fed1c51a22a7b7feb98169a66648a0402711d4e",
-                "size": 35138020,
+                "url": "https://transfer.sh/J2geW/initrd.img.gz", 
+                "sha256": "fa042cc53dda77d2c1fa178c4bcb380b6468e51afb375ee4f300397e9c49d6a9",
+                "size": 42713274,
                 "dest": "grub"
             }
         ]
